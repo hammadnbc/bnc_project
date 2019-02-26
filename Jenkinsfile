@@ -13,7 +13,6 @@ pipeline {
         stage('Test image') {
             steps {
                 sh 'echo "Tests passed"'
-                sh 'docker-compose down'
             }
         }
         stage('Deploy image') {
