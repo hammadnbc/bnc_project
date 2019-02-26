@@ -11,9 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo "Tests passed"'
-                sh 'docker container rm -f myredis'
-                sh 'docker container rm -f frontend'
-                sh 'docker container rm -f nodeapp'
+                sh 'docker-compose down'
             }
         }
     }
