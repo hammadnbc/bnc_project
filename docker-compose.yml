@@ -4,14 +4,14 @@ services:
     image: redis
     container_name: myredis
   nodeapp:
-    image: bnc_project_api_nodeapp
+    image: bnc_project_api_nodeapp:test
     container_name: nodeapp
     environment:
       - REDIS_HOST=myredis
     depends_on:
       - myredis
   frontend:
-    image: bnc_project_api_frontend
+    image: bnc_project_api_frontend:test
     container_name: frontend
     ports:
       - 8080:80
