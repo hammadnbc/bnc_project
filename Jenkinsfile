@@ -12,8 +12,8 @@ pipeline {
             steps {
                 sh 'echo "Tests passed"'
                 sh 'docker container rm -f myredis'
-                sh 'docker container rm -f bnc_project_api_frontend'
-                sh 'docker container rm -f bnc_project_api_nodeapp'
+                sh 'docker container rm -f frontend'
+                sh 'docker container rm -f nodeapp'
             }
         }
     }
