@@ -1,0 +1,19 @@
+version: '2'
+services:
+  myredis:
+    image: redis
+    container_name: myredis
+  nodeapp:
+    image: nodeapp-ccz
+    container_name: nodeapp
+    environment:
+      - REDIS_HOST=myredis
+    depends_on:
+      - myredis
+  frontend:
+    image: frontend-ccz
+    container_name: frontend
+    ports:
+      - 80:80
+    depends_on:
+      - nodeapp
