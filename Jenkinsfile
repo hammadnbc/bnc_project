@@ -19,6 +19,7 @@ pipeline {
         stage('Deploy image') {
             steps{
                 script{
+                    sh 'docker login -u cozeacatalin -p admin.'
                     sh 'docker tag bnc_project_api_frontend:test  cozeacatalin/ccz-repo:frontend'
                     sh 'docker push cozeacatalin/ccz-repo:frontend'
                     sh 'docker tag bnc_project_api_nodeapp:test cozeacatalin/ccz-repo:nodeapp'
