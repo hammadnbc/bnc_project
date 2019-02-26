@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'curl localhost:8080/streams/users/connected'
                 sh 'echo "Tests passed"'
                 sh 'docker-compose down'
             }
